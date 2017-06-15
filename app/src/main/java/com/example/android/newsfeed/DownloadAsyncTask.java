@@ -12,14 +12,14 @@ import java.net.URL;
  * Created by Marcin on 2017-05-21.
  */
 
-public class DownloadAsyncTask extends AsyncTask<NewsAdapter.ViewHolder, Void, NewsAdapter.ViewHolder> {
+public class DownloadAsyncTask extends AsyncTask<NewsAdapter.NewsViewHolder, Void, NewsAdapter.NewsViewHolder> {
 
     private Bitmap bitmap;
 
     @Override
-    protected NewsAdapter.ViewHolder doInBackground(NewsAdapter.ViewHolder... params) {
+    protected NewsAdapter.NewsViewHolder doInBackground(NewsAdapter.NewsViewHolder... params) {
         //load image directly
-        NewsAdapter.ViewHolder viewHolder = params[0];
+        NewsAdapter.NewsViewHolder viewHolder = params[0];
         try {
             URL imageURL = new URL(viewHolder.imageURL);
             bitmap = BitmapFactory.decodeStream(imageURL.openStream());
@@ -31,7 +31,7 @@ public class DownloadAsyncTask extends AsyncTask<NewsAdapter.ViewHolder, Void, N
     }
 
     @Override
-    protected void onPostExecute(NewsAdapter.ViewHolder result) {
+    protected void onPostExecute(NewsAdapter.NewsViewHolder result) {
         if (bitmap == null) {
             result.imageView.setImageResource(R.mipmap.ic_launcher);
         } else {
