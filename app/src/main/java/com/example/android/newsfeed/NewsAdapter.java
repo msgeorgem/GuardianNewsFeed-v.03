@@ -20,14 +20,13 @@ import static com.example.android.newsfeed.R.id.date;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    NewsActivity mContext;
+
     private NewsActivity activity = new NewsActivity();
     private ArrayList<SingleNews> mListAdapter;
 
 
-    public NewsAdapter(NewsActivity context, ArrayList<SingleNews> listNews) {
+    public NewsAdapter(ArrayList<SingleNews> listNews) {
         mListAdapter = listNews;
-        mContext = context;
     }
 
     @Override
@@ -49,7 +48,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         final SingleNews currentNews = mListAdapter.get(position);
 
         viewHolder.imageURL = currentNews.getThumbnail();
-//        AsyncTask.execute((Runnable) viewHolder);
+        new DownloadAsyncTask().execute(viewHolder);
 
         viewHolder.titleTextView.setText(currentNews.getTitle());
         viewHolder.shortTextView.setText(currentNews.getShorttext());

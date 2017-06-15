@@ -72,7 +72,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<A
         // Find a reference to the {@link ListView} in the layout
         newsRecyclerView = (RecyclerView) findViewById(R.id.list_item);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new NewsAdapter(NewsActivity.this, newsList);
+        mAdapter = new NewsAdapter(newsList);
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
@@ -144,12 +144,12 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<A
         loadingIndicator.setVisibility(View.GONE);
 
         newsRecyclerView.setVisibility(View.VISIBLE);
-        mAdapter = new NewsAdapter(NewsActivity.this, newsList);
+        mAdapter = new NewsAdapter(newsList);
 
         // If there is a valid list of {@link News}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (news != null && !news.isEmpty()) {
-            mAdapter = new NewsAdapter(NewsActivity.this, news);
+            mAdapter = new NewsAdapter(news);
             newsRecyclerView.setAdapter(mAdapter);
         }
     }
@@ -158,7 +158,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<A
     public void onLoaderReset(Loader<ArrayList<SingleNews>> loader) {
         // Loader reset, so we can clear out our existing data.
         Log.i(LOG_TAG, "onLoaderReset");
-        mAdapter = new NewsAdapter(NewsActivity.this, newsList);
+        mAdapter = new NewsAdapter(newsList);
     }
 
     @Override
