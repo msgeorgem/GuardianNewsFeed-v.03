@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -51,6 +52,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<A
             "https://content.guardianapis.com/search?" +
                     "&show-fields=headline,thumbnail,trailText,short-url,lastModified" +
                     "&show-tags=type";
+    private static final int VERTICAL_ITEM_SPACE = 48;
     /**
      * Adapter for the list of news
      */
@@ -77,6 +79,8 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<A
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         newsRecyclerView.setAdapter(mAdapter);
+        newsRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        newsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
 
