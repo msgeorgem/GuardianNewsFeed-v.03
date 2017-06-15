@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Guardian News</string>
+    <!-- Text to display in the list when there are no news [CHAR LIMIT=NONE] -->
+    <string name="no_news">No News found :(.</string>
+    <!-- Text to display in the list when there is no internet connection [CHAR LIMIT=NONE] -->
+    <string name="no_internet">No internet connection.</string>
+    <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
+    <string name="settings_menu_item">Settings</string>
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <string name="settings_title">News Feeder Settings</string>
+    <!-- Strings For Minimum Magnitude Preference [CHAR LIMIT=30] -->
+    <string name="settings_query_label">Ask anything</string>
+    <string name="settings_query_key" translatable="false">query</string>
+    <string name="settings_query_default" translatable="false">brexit</string>
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_tag_politics_value</string>
+
+     <!--Label for order-by magnitude option [CHAR LIMIT=20] -->
+    <!--<string name="settings_order_by_tag_all_label">All kinds of news</string>-->
+    <!--<string name="settings_order_by_tsg_all_value" translatable="false"></string>-->
+
+    <!-- Label for order-by politics[CHAR LIMIT=20] -->
+    <string name="settings_order_by_tag_politics_label">Politics</string>
+    <string name="settings_order_by_tag_politics_value" translatable="false">politics/politics</string>
+
+    <!-- Label for order-by business [CHAR LIMIT=20] -->
+    <string name="settings_order_by_tag_business_label">Business</string>
+    <string name="settings_order_by_tag_business_value" translatable="false">business/business</string>
+
+    <!-- Label for order-by film [CHAR LIMIT=20] -->
+    <string name="settings_order_by_tag_film_label">Movies</string>
+    <string name="settings_order_by_tag_film_value" translatable="false">film/film</string>
+
+    <!-- Label for order-by music [CHAR LIMIT=20] -->
+    <string name="settings_order_by_tag_music_label">Music</string>
+    <string name="settings_order_by_tag_music_value" translatable="false">music/music</string>
+
+    <!-- Label for order-by sport [CHAR LIMIT=20] -->
+    <string name="settings_order_by_tag_sport_label">Sport</string>
+    <string name="settings_order_by_tag_sport_value" translatable="false">sport/sport</string>
+
+    <!-- Label for order-by travel [CHAR LIMIT=20] -->
+    <string name="settings_order_by_tag_travel_label">Travel</string>
+    <string name="settings_order_by_tag_travel_value" translatable="false">travel/travel</string>
+
+
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_order_by_labels">
+        <!--<item>@string/settings_order_by_tag_all_label</item>-->
+        <item>@string/settings_order_by_tag_politics_label</item>
+        <item>@string/settings_order_by_tag_business_label</item>
+        <item>@string/settings_order_by_tag_film_label</item>
+        <item>@string/settings_order_by_tag_music_label</item>
+        <item>@string/settings_order_by_tag_sport_label</item>
+        <item>@string/settings_order_by_tag_travel_label</item>
+    </string-array>
+
+    <string-array name="settings_order_by_values">
+        <!--<item>@string/settings_order_by_tsg_all_value</item>-->
+        <item>@string/settings_order_by_tag_politics_value</item>
+        <item>@string/settings_order_by_tag_business_value</item>
+        <item>@string/settings_order_by_tag_film_value</item>
+        <item>@string/settings_order_by_tag_music_value</item>
+        <item>@string/settings_order_by_tag_sport_value</item>
+        <item>@string/settings_order_by_tag_travel_value</item>
+    </string-array>
+</resources>
