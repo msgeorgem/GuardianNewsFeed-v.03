@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import static com.example.android.newsfeed.R.id.date;
@@ -21,6 +23,8 @@ import static com.example.android.newsfeed.R.id.date;
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
 
+    private static final int IMG_LOADER = 22;
+    private static final String IMG_URL_EXTRA = "img";
     private NewsActivity activity = new NewsActivity();
     private ArrayList<SingleNews> mListAdapter;
 
@@ -48,10 +52,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         final SingleNews currentNews = mListAdapter.get(position);
 
         viewHolder.imageURL = currentNews.getThumbnail();
-        new DownloadAsyncTask().execute(viewHolder);
+        Context context = viewHolder.itemView.getContext();
+        Picasso.with(context).load(viewHolder.imageURL).into(viewHolder.imageView);
 
         viewHolder.titleTextView.setText(currentNews.getTitle());
         viewHolder.shortTextView.setText(currentNews.getShorttext());
+
 
         String formattedDate = (currentNews.getDateTime()).substring(0, 10);
         viewHolder.dateView.setText(formattedDate);

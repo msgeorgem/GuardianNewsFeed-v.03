@@ -107,8 +107,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<A
             // Set empty state text to display "No internet connection"
             mEmptyStateTextView.setText(R.string.no_internet);
         }
-
-
     }
 
     @Override
@@ -163,6 +161,12 @@ public class NewsActivity extends AppCompatActivity implements LoaderCallbacks<A
         // Loader reset, so we can clear out our existing data.
         Log.i(LOG_TAG, "onLoaderReset");
         mAdapter = new NewsAdapter(newsList);
+    }
+
+    @Override
+    public void onResume() {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
     }
 
     @Override
